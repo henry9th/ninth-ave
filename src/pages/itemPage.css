@@ -1,0 +1,33 @@
+.image-carousel {
+    margin-top: 3%; 
+    width: 40%;
+    float: left;
+}
+
+.carousel { 
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-information { 
+    margin-top: 3%;
+    width: 40%;
+    float: left;
+}
+
+.item-name {
+    font-weight: 200;
+    font-size: 3vw;
+}
+
+.item-brand {
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+.item-size {
+    display: block;
+    width: 50px;
+}

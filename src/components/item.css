@@ -1,0 +1,17 @@
+.item-div {
+    display: inline-block;
+    text-align: center;
+}
+
+.mini-item-image {
+    width: 120px;
+    margin: 50px;
+}
+
+.mini-item-name {
+    margin-bottom: 0px
+}
+
+.mini-item-brand { 
+    font-weight: bold;
+}
