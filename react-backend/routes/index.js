@@ -2,10 +2,26 @@ let express = require("express");
 let router = express.Router();
 
 let Seller = require("../models/seller");
-let Item = require("../models/item"); 
+let Item = require("../models/item");
 
-router.get('/seller/:seller', function(req, res) {
-  res.send("test route");
+router.get('/seller/:sellerName', function (req, res) {
+  var sellerName = request.params.sellerName.Trim().toLowerCase();
+
+  try {
+    Seller.find({
+      sellerName: { $regex: sellerName, $options: "i" }
+    }).exec((err, sellers) => {
+      if (err || !sellers || sellers.length > 1) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(sellers.get(0));
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
 });
 
 
