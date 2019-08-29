@@ -14,6 +14,8 @@ let setupMongoDB = async () => {
     await mongoose.connect(conf.mongodb, {
       useNewUrlParser: true
     });
+    console.log("connection state: " + mongoose.connection.readyState);    
+
     console.log(`MongoDB connected: ${conf.mongodb}`);
   } catch (err) {
     console.log(err);

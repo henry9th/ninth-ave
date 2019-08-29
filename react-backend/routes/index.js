@@ -4,18 +4,19 @@ let router = express.Router();
 let Seller = require("../models/seller");
 let Item = require("../models/item");
 
-router.get('/seller/:sellerName', function (req, res) {
-  var sellerName = request.params.sellerName.Trim().toLowerCase();
-
+router.get('/seller/:sellerName', async function (req, res) {
+  var sellerName = req.params.sellerName.trim().toLowerCase();  
+	console.log("sellerName: " + sellerName);
   try {
-    Seller.find({
-      sellerName: { $regex: sellerName, $options: "i" }
-    }).exec((err, sellers) => {
-      if (err || !sellers || sellers.length > 1) {
+
+    Seller.findOne({
+      "name" : { $regex: sellerName, $options: "i" }
+    }).exec((err, seller) => {
+      if (err || !seller) {
         if (err) console.log(err);
         res.status(400).send({ error: "Internal DB error" });
       } else {
-        res.status(200).send(sellers.get(0));
+        res.status(200).send(seller);
       }
     });
   } catch (err) {
