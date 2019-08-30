@@ -7,9 +7,7 @@ import { Dropdown } from 'react-bootstrap';
 class ItemPage extends React.Component {
     constructor(props) {
         super(props);
-
-        console.log(this.props.item);
-
+        
         this.state = {
             item: this.props.location.state.item
         }
@@ -17,6 +15,13 @@ class ItemPage extends React.Component {
 
     componentDidMount() {
         // fetch items
+    }
+
+    handleSellerClick = () => {
+        this.props.history.push({
+            pathname: "/s/" + this.state.item.sellerName, 
+            state: { sellerId: this.state.item.sellerId }
+        });
     }
 
     render() {
@@ -37,7 +42,7 @@ class ItemPage extends React.Component {
                 </div>
                 <div className="item-information">
                     <p className="item-name"> {this.state.item.name} </p>
-                    <p className="item-brand"> {this.state.item.brand} </p>
+                    <p className="item-sellerName" onClick={this.handleSellerClick}> {this.state.item.sellerName} </p>
                     <p className="item-description"> {this.state.item.description} </p>
 
                     <Dropdown className="item-size">

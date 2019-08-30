@@ -21,7 +21,7 @@ class SellerPage extends React.Component {
             if (!result.error) { 
                 this.setState({ seller: result })
             } else {
-                console.log(JSON.stringify(json));
+                console.log(JSON.stringify(result));
             }
         });
     }

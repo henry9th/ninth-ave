@@ -16,7 +16,7 @@ class Item extends React.Component {
             <div className="item-div" onClick={() => this.props.onClick(this.state.item)}>
                 <img src={require("../images/" + this.state.item.images[0])} alt={this.state.item.name} className="mini-item-image" />
                 <p className="mini-item-name">{this.state.item.name}</p>
-                <p className="mini-item-brand">{this.state.item.brand}</p>
+                <p className="mini-item-sellerName">{this.state.item.sellerName}</p>
             </div>
         );
     }
