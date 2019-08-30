@@ -33,6 +33,11 @@ app.use(cookieParser());
 
 app.use("/", indexRouter);
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // TODO: Remove later
+  next();
+});
+
 app.all("*", (req, res) => {
   res.status(404).send({ error: "Bad request" });
 });

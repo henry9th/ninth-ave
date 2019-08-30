@@ -1,7 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Dropdown } from 'react-bootstrap';
 
 class SellerPage extends React.Component {
     constructor(props) {
@@ -13,7 +12,7 @@ class SellerPage extends React.Component {
     }
 
     componentWillMount() { 
-        fetch('http://localhost:3001/seller/id/' + this.props.location.state.sellerId)
+        fetch('http://52.191.191.165:3001/seller/id/' + this.props.location.state.sellerId)
         .then(function(response) {
             return response.json();
         })
