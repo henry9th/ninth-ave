@@ -4,19 +4,78 @@ let router = express.Router();
 let Seller = require("../models/seller");
 let Item = require("../models/item");
 
-router.get('/seller/:sellerName', async function (req, res) {
+
+// should perform regex on seller name
+router.get('/seller/name/:sellerName', async function (req, res) {
   var sellerName = req.params.sellerName.trim().toLowerCase();  
 	console.log("sellerName: " + sellerName);
   try {
-
-    Seller.findOne({
+    Seller.find({
       "name" : { $regex: sellerName, $options: "i" }
-    }).exec((err, seller) => {
+    }).exec((err, sellers) => {
+      if (err || !sellers) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(sellers);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
+});
+
+router.get('/seller/id/:sellerId', async function (req, res) {
+  var sellerId= req.params.sellerId; 
+
+  try {
+    Seller.findById(sellerId).exec((err, seller) => {
       if (err || !seller) {
         if (err) console.log(err);
         res.status(400).send({ error: "Internal DB error" });
       } else {
         res.status(200).send(seller);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
+});
+
+
+// should perform regex on item name
+router.get('/item/name/:itemName', async function (req, res) {
+  var sellerName = req.params.sellerName.trim().toLowerCase();  
+	console.log("itemName: " + itemName);
+  try {
+    Item.find({
+      "name" : { $regex: itemName, $options: "i" }
+    }).exec((err, items) => {
+      if (err || !items) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(items);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
+});
+
+router.get('/item/id/:itemId', async function (req, res) {
+  var itemId= req.params.itemId; 
+
+  try {
+    Item.findById(itemId).exec((err, item) => {
+      if (err || !item) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(item);
       }
     });
   } catch (err) {
