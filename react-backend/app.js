@@ -31,12 +31,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/", indexRouter);
-
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // TODO: Remove later
+  res.header("Access-Control-Allow-Origin", '*'); // TODO: Remove later
+
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH');
+ 
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
   next();
 });
+
+app.use("/", indexRouter);
+
 
 app.all("*", (req, res) => {
   res.status(404).send({ error: "Bad request" });
