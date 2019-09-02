@@ -2,6 +2,7 @@ import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./sellerPage.css";
 import { Button } from 'react-bootstrap';
+import Item from '../components/Item';
 
 class SellerPage extends React.Component {
     constructor(props) {
@@ -30,15 +31,15 @@ class SellerPage extends React.Component {
             .then(sellerResult => {
                 if (!sellerResult.error) {
                     console.log(JSON.stringify(sellerResult));
-                    
-                    fetch('http://52.191.191.165:3001/item/id/' + this.props.location.state.sellerId)
+
+                    fetch('http://52.191.191.165:3001/item/seller/' + this.props.location.state.sellerId)
                         .then(response => {
                             return response.json();
                         }).then(itemResult => {
-                            if (!itemResult.error) { 
+                            if (!itemResult.error) {
                                 this.setState({ sellerName: sellerResult.name, sellerBio: sellerResult.bio, items: itemResult })
                                 console.log(JSON.stringify(itemResult));
-                            } else { 
+                            } else {
                                 console.log(JSON.stringify(itemResult));
                             }
                         })
@@ -53,7 +54,7 @@ class SellerPage extends React.Component {
 
         return (
             <div>
-                <div className="sidebar"> 
+                <div className="sidebar">
                     <Button className="sidebar-button" onClick={() => this.setState({ pageState: 0 })}> Collection </Button>
                     <Button className="sidebar-button" onClick={() => this.setState({ pageState: 1 })}> Lookbook </Button>
                     <Button className="sidebar-button" onClick={() => this.setState({ pageState: 2 })}> Shipping and Returns </Button>
@@ -61,18 +62,29 @@ class SellerPage extends React.Component {
                 </div>
 
                 <div className="seller-main">
-                    {this.state.sellerName != "" ?
-                        <img src={require("../images/" + this.state.sellerName.replace(/ /g,"_") + "/logo.jpg")} className="seller-brand-image" />
+                    {this.state.sellerName !== "" ?
+                        <div>
+                            <img src={require("../images/" + this.state.sellerName.replace(/ /g, "_") + "/logo.jpg")} className="seller-brand-image" />
+                            <p className="seller-name"> {this.state.sellerName} </p> </div>
                         :
                         null
                     }
 
-                    {this.state.pageState == 0 ?
-                        <div className="collection-view"> <p className="seller-name"> {this.state.sellerName} </p> <br/>
-                        <p className="seller-bio"> {this.state.sellerBio} </p> </div>
+                    {this.state.pageState === 0 ?
+                        <div className="collection-view">
+                            <p className="seller-bio"> {this.state.sellerBio} </p>
+                            {this.state.items != null && this.state.items.length > 0 ?
+                                this.state.items.map((item) =>
+                                    <Item item={item} onClick={this.handleClick} />
+                                )
+                                :
+                                <p>Oops. Looks like there's no items currently.</p>
+                            }
+
+                        </div>
                         : null
                     }
-                    
+
                 </div>
             </div>
         );

@@ -45,6 +45,24 @@ router.get('/seller/id/:sellerId', async function (req, res) {
 });
 
 
+// Get most recent 50 items
+router.get('/item', async function (req, res) {
+  try {
+    Item.find().limit(50).sort({ 'postDate': -1 }).exec((err, items) => {
+      if (err || !items) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(items);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
+});
+
+
 // should perform regex on item name
 router.get('/item/name/:itemName', async function (req, res) {
   var itemName = req.params.sellerName.trim().toLowerCase();  

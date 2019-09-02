@@ -6,7 +6,7 @@ let Item = new mongoose.Schema({
   availability: { type: Map, required: true },
   sellerName: { type: String, required: true },
   sellerId: { type: mongoose.Schema.Types.ObjectId, required: true },
-  date: { type: Number, required: true }
+  postDate: { type: Number, required: true },
 });
 
 module.exports = mongoose.model("Item", Item);

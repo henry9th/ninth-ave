@@ -75,7 +75,7 @@ class HomePage extends React.Component {
                             <Item item={item} onClick={this.handleClick} />
                         )
                         :
-                        <p>Oops. Looks like there's no items currently.</p>
+                        <p>Oops. Looks like there are no items currently.</p>
                     }
                 </div>
             </div>

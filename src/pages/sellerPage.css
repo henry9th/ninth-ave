@@ -2,6 +2,7 @@
     width: 8%;
     display: inline-block;
     margin: 2%;
+    margin-left: 0%;
 }
 
 .seller-name { 
@@ -53,4 +54,7 @@
 .seller-main {
     margin-left: 17%;
     margin-right: 3%;
+}
+
+.collection-view { 
 }
