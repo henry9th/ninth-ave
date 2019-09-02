@@ -47,11 +47,30 @@ router.get('/seller/id/:sellerId', async function (req, res) {
 
 // should perform regex on item name
 router.get('/item/name/:itemName', async function (req, res) {
-  var sellerName = req.params.sellerName.trim().toLowerCase();  
-	console.log("itemName: " + itemName);
+  var itemName = req.params.sellerName.trim().toLowerCase();  
+
   try {
     Item.find({
       "name" : { $regex: itemName, $options: "i" }
+    }).exec((err, items) => {
+      if (err || !items) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(items);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
+});
+
+router.get('/item/seller/:sellerId', async function (req, res) {
+  var sellerId = req.params.sellerId.trim();
+  try {
+    Item.find({
+      "sellerId" : sellerId
     }).exec((err, items) => {
       if (err || !items) {
         if (err) console.log(err);

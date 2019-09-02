@@ -10,9 +10,9 @@ class HomePage extends React.Component {
             items: [
                 {
                     name: "Sample shirt", 
-                    sellerName: "Sample brand",
+                    sellerName: "Sample Brand",
                     sellerId: "5d67f8a68491154fd0614a8e",
-                    images: ["sample_brand/sampleshirt.jpg","sample_brand/sampleshirt.jpg","sample_brand/sampleshirt.jpg"],
+                    images: ["Sample_Brand/sampleshirt.jpg","Sample_Brand/sampleshirt.jpg","Sample_Brand/sampleshirt.jpg"],
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed neque erat. Fusce id quam justo. Suspendisse pharetra dui sem, id sollicitudin lorem gravida nec. Proin nisl dolor, rhoncus interdum ultrices sit amet, vestibulum sit amet lacus. Nullam quis nibh sit amet odio imperdiet hendrerit. Sed finibus, elit sed porttitor tincidunt, risus velit fermentum dui, nec tristique turpis ligula id nunc. Curabitur eleifend purus iaculis ligula pulvinar, id congue massa pharetra. Aliquam vel dui ullamcorper, mattis metus eu, maximus massa. Curabitur ex turpis, vehicula ultricies quam et, tristique luctus urna. Nulla dapibus, nunc et fermentum rutrum, libero dolor rhoncus ante, sit amet rutrum justo turpis in sem. Sed sed ultricies leo. Mauris in sollicitudin dui. Mauris sapien nulla, sollicitudin sed nibh vitae, ultrices mattis nunc. Suspendisse auctor quam et quam faucibus, at laoreet elit gravida. Praesent venenatis molestie tellus, ac molestie ante placerat vitae.",
                     availability: {
                         "S": 1,
@@ -25,7 +25,7 @@ class HomePage extends React.Component {
                     name: "Sample shirt 2", 
                     sellerName: "Sample brand",
                     sellerId: "5d67f8a68491154fd0614a8e",
-                    images: ["sample_brand/sampleshirt.jpg","sample_brand/sampleshirt.jpg","sample_brand/sampleshirt.jpg"],
+                    images: ["Sample_Brand/sampleshirt.jpg","Sample_Brand/sampleshirt.jpg","Sample_Brand/sampleshirt.jpg"],
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed neque erat. Fusce id quam justo. Suspendisse pharetra dui sem, id sollicitudin lorem gravida nec. Proin nisl dolor, rhoncus interdum ultrices sit amet, vestibulum sit amet lacus. Nullam quis nibh sit amet odio imperdiet hendrerit. Sed finibus, elit sed porttitor tincidunt, risus velit fermentum dui, nec tristique turpis ligula id nunc. Curabitur eleifend purus iaculis ligula pulvinar, id congue massa pharetra. Aliquam vel dui ullamcorper, mattis metus eu, maximus massa. Curabitur ex turpis, vehicula ultricies quam et, tristique luctus urna. Nulla dapibus, nunc et fermentum rutrum, libero dolor rhoncus ante, sit amet rutrum justo turpis in sem. Sed sed ultricies leo. Mauris in sollicitudin dui. Mauris sapien nulla, sollicitudin sed nibh vitae, ultrices mattis nunc. Suspendisse auctor quam et quam faucibus, at laoreet elit gravida. Praesent venenatis molestie tellus, ac molestie ante placerat vitae.",
                     availability: {
                         "S": 1,
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
                     name: "Sample shirt 3", 
                     sellerName: "Sample brand",
                     sellerId: "5d67f8a68491154fd0614a8e",
-                    images: ["sample_brand/sampleshirt.jpg","sample_brand/sampleshirt.jpg","sample_brand/sampleshirt.jpg"],
+                    images: ["Sample_Brand/sampleshirt.jpg","Sample_Brand/sampleshirt.jpg","Sample_Brand/sampleshirt.jpg"],
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed neque erat. Fusce id quam justo. Suspendisse pharetra dui sem, id sollicitudin lorem gravida nec. Proin nisl dolor, rhoncus interdum ultrices sit amet, vestibulum sit amet lacus. Nullam quis nibh sit amet odio imperdiet hendrerit. Sed finibus, elit sed porttitor tincidunt, risus velit fermentum dui, nec tristique turpis ligula id nunc. Curabitur eleifend purus iaculis ligula pulvinar, id congue massa pharetra. Aliquam vel dui ullamcorper, mattis metus eu, maximus massa. Curabitur ex turpis, vehicula ultricies quam et, tristique luctus urna. Nulla dapibus, nunc et fermentum rutrum, libero dolor rhoncus ante, sit amet rutrum justo turpis in sem. Sed sed ultricies leo. Mauris in sollicitudin dui. Mauris sapien nulla, sollicitudin sed nibh vitae, ultrices mattis nunc. Suspendisse auctor quam et quam faucibus, at laoreet elit gravida. Praesent venenatis molestie tellus, ac molestie ante placerat vitae.",
                     availability: {
                         "S": 1,

@@ -1,9 +1,11 @@
 let mongoose = require("mongoose");
 
 let Item = new mongoose.Schema({
-  id: { type: mongoose.Schema.Types.ObjectId, ref: "Item" },
   name: { type: String, required: true },
-  bio: { type: String, required: true },
+  description: { type: String, required: true },
+  availability: { type: Map, required: true },
+  sellerName: { type: String, required: true },
+  sellerId: { type: mongoose.Schema.Types.ObjectId, required: true },
   date: { type: Number, required: true }
 });
 

@@ -1,0 +1,56 @@
+.seller-brand-image {
+    width: 8%;
+    display: inline-block;
+    margin: 2%;
+}
+
+.seller-name { 
+    display: inline-block;
+    font-size: 3vw;
+}
+
+.seller-bio {
+    display: inline-block;
+    font-size: 1vw;
+}
+
+.sidebar { 
+    padding-left: 1%;
+    margin-top: 20vh;
+    position: fixed;
+    width: 15%;
+    display: block;
+}
+
+.sidebar-button {
+    text-align: left;
+    font-size: 1.1vw;
+    margin-bottom: 2%;
+    display: block;
+    background: transparent;
+    border: none;
+    color: dimgray;
+}
+
+.sidebar-button:hover { 
+    background: transparent;
+    border: none;
+    color: lightgray;
+}
+
+.sidebar-button:focus,.sidebar-button:active:focus,.sidebar-button.active:focus,
+.sidebar-button.focus,.sidebar-button:active.focus,.sidebar-button.active.focus {
+    background-color: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.sidebar-button:global(.active), .sidebar-button:active, .sidebar-button.active { 
+    background-color: transparent !important; 
+    box-shadow: none;
+}
+
+.seller-main {
+    margin-left: 17%;
+    margin-right: 3%;
+}
