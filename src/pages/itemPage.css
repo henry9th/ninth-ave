@@ -27,7 +27,33 @@
     font-weight: 500;
 }
 
-.item-size {
-    display: block;
-    width: 50px;
+.item-size-dropdown-toggle {
+    float: left;
+    width: 30%;
+    background-color: white;
+    border-color: black;
+    color: black;
 }
+
+.item-size-dropdown-toggle:hover {
+    background-color: lightgray;
+    border-color: black;
+    color: black;
+}
+
+.item-size-dropdown-toggle:focus {
+    background-color: lightgray;
+    box-shadow:none !important;
+    border: none !important;
+}
+
+.show > .btn-success.item-size-dropdown-toggle {
+    background-color: red;
+}
+
+.buy-button { 
+    display: inline-block;
+    margin-left: 5%;
+    width: 15%;
+}
+
