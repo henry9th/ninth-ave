@@ -3,7 +3,43 @@ let router = express.Router();
 
 let Seller = require("../models/seller");
 let Item = require("../models/item");
+let mongoose = require("mongoose");
 
+var newItem = new Item({ name: 'Test item', description: "random description", availability: null, sellerName: "Test seller", sellerId: new mongoose.mongo.ObjectId('56cb91bdc3464f14678934ca'), postDate: 0 });
+
+
+
+/* code for initializing mongo collections */ 
+
+// newItem.save(function (err) {
+//   if (err) console.log(err);
+//   // saved!
+// });
+
+// var newSeller = new Seller({ name: 'Test seller', bio: "random bio", joinDate: 0, brandImage: "random path", coverImage: "random" });
+
+// newSeller.save(function (err) {
+//   if (err) console.log(err);
+//   // saved!
+// });
+
+
+// Get all sellers 
+router.get('/seller/', async function (req, res) {
+  try {
+    Seller.find().sort({ 'name': 1 }).exec((err, sellers) => {
+      if (err || !sellers) {
+        if (err) console.log(err);
+        res.status(400).send({ error: "Internal DB error" });
+      } else {
+        res.status(200).send(sellers);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).send({ error: "Internal error" });
+  }
+});
 
 // should perform regex on seller name
 router.get('/seller/name/:sellerName', async function (req, res) {

@@ -4,15 +4,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import Header from './components/Header';
 import * as serviceWorker from './serviceWorker';
-import createHistory from 'history/createBrowserHistory'
+import { createBrowserHistory } from 'history'
 import Routes from "./routes";
 import { Router } from "react-router-dom";
 
-const history = createHistory()
+const history = createBrowserHistory()
 
 ReactDOM.render(
     <div> 
-        <Header />
+        <Header history={history}/>
         <Router history={history}>
             <Routes />
         </Router>

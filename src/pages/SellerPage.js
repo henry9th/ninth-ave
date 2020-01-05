@@ -24,28 +24,24 @@ class SellerPage extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://52.191.191.165:3001/seller/id/' + this.props.location.state.sellerId)
+        fetch('http://localhost:3001/seller/id/' + this.props.location.state.sellerId)
             .then(response => {
                 return response.json();
             })
             .then(sellerResult => {
                 if (!sellerResult.error) {
-                    console.log(JSON.stringify(sellerResult));
-
-                    fetch('http://52.191.191.165:3001/item/seller/' + this.props.location.state.sellerId)
+                    fetch('http://localhost:3001/item/seller/' + this.props.location.state.sellerId)
                         .then(response => {
                             return response.json();
                         }).then(itemResult => {
                             if (!itemResult.error) {
                                 this.setState({ sellerName: sellerResult.name, sellerBio: sellerResult.bio, items: itemResult })
-                                console.log(JSON.stringify(itemResult));
                             } else {
                                 console.log(JSON.stringify(itemResult));
                             }
                         })
-
                 } else {
-                    console.log(JSON.stringify(sellerResult));
+                    console.log(sellerResult.error);
                 }
             });
     }
@@ -64,7 +60,7 @@ class SellerPage extends React.Component {
                 <div className="seller-main">
                     {this.state.sellerName !== "" ?
                         <div>
-                            <img src={require("../images/" + this.state.sellerName.replace(/ /g, "_") + "/logo.jpg")} className="seller-brand-image" />
+                            <img alt={this.state.sellerName + " logo"} src={"/images/" + this.state.sellerName.replace(" ", "_") + "/logo.jpg"} />
                             <p className="seller-name"> {this.state.sellerName} </p> </div>
                         :
                         null
@@ -74,13 +70,12 @@ class SellerPage extends React.Component {
                         <div className="collection-view">
                             <p className="seller-bio"> {this.state.sellerBio} </p>
                             {this.state.items != null && this.state.items.length > 0 ?
-                                this.state.items.map((item) =>
-                                    <Item item={item} onClick={this.handleClick} />
+                                this.state.items.map((item, index) =>
+                                    <Item key={index} item={item} onClick={this.handleClick} />
                                 )
                                 :
                                 <p>Oops. Looks like there's no items currently.</p>
                             }
-
                         </div>
                         : null
                     }

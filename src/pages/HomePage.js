@@ -12,7 +12,7 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://52.191.191.165:3001/item')
+        fetch('http://localhost:3001/item')
             .then(response => {
                 return response.json();
             })
@@ -42,8 +42,8 @@ class HomePage extends React.Component {
 
                 <div className="items-display">
                     {this.state.items != null && this.state.items.length > 0 ?
-                        this.state.items.map((item) =>
-                            <Item item={item} onClick={this.handleClick} />
+                        this.state.items.map((item, index) =>
+                            <Item key={index} item={item} onClick={this.handleClick} />
                         )
                         :
                         <p>Oops. Looks like there are no items currently.</p>

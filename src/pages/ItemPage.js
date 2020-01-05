@@ -36,7 +36,7 @@ class ItemPage extends React.Component {
                         showIndicators={false}>
 
                         {this.state.item.images.map(function (image, index) {
-                            return <img src={require("../images/" + image)} className="item-image" />
+                            return <img key={index} alt={image} src={"/images/" + image} className="item-image" />
                         })}
                     </Carousel>
 
@@ -55,9 +55,9 @@ class ItemPage extends React.Component {
 
                             {Object.keys(this.state.item.availability).map((key, index) => {
                                 if (this.state.item.availability[key] > 0) {
-                                    return <Dropdown.Item onClick={()=> this.setState({ selectedSize: key })}> {key} </Dropdown.Item>
+                                    return <Dropdown.Item key={index} onClick={()=> this.setState({ selectedSize: key })}> {key} </Dropdown.Item>
                                 } else {
-                                    return <Dropdown.Item disabled={true}> {key} </Dropdown.Item>
+                                    return <Dropdown.Item key={index} disabled={true}> {key} </Dropdown.Item>
                                 }
                             })
                             }
