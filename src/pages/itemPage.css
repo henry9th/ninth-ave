@@ -19,17 +19,18 @@
 
 .item-name {
     font-weight: 200;
-    font-size: 3vw;
+    font-size: 30px;
 }
 
 .item-sellerName {
-    font-size: 1.5vw;
+    font-size: 20px;
     font-weight: 500;
 }
 
 .item-size-dropdown-toggle {
-    float: left;
-    width: 30%;
+    font-size: 16px;
+    font-family: monospace;
+    display: inline-block;
     background-color: white;
     border-color: black;
     color: black;
@@ -48,12 +49,26 @@
 }
 
 .show > .btn-success.item-size-dropdown-toggle {
-    background-color: red;
+    background-color: gray;
+    display: inline;
 }
 
-.buy-button { 
-    display: inline-block;
+.item-size-dropdown {
+    display: inline;
+}
+
+.add-to-cart-button { 
+    float: right;
     margin-left: 5%;
-    width: 15%;
 }
 
+.paypal-container { 
+    float: right;
+    width: 50%;
+
+}
+
+.paypal-buttons { 
+    margin-top: 5%;
+    
+}

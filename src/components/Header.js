@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap';
+import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 
 class Header extends React.Component {
     constructor(props) {
@@ -34,8 +34,8 @@ class Header extends React.Component {
 
     render() {
         return (
-            <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
+            <Navbar bg="gray" expand="lg">
+                <Navbar.Brand href="/">Beta Website</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -45,6 +45,11 @@ class Header extends React.Component {
                                 }
                             )}
                         </NavDropdown>
+                                
+                        <Nav.Link href="/webmag"> Web Mag </Nav.Link>
+                        <Nav.Link href="/owners"> Owners </Nav.Link>
+                        <Nav.Link href="/cart"> Cart </Nav.Link>
+
                     </Nav>
                     {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

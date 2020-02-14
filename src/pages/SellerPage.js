@@ -60,7 +60,7 @@ class SellerPage extends React.Component {
                 <div className="seller-main">
                     {this.state.sellerName !== "" ?
                         <div>
-                            <img alt={this.state.sellerName + " logo"} src={"/images/" + this.state.sellerName.replace(" ", "_") + "/logo.jpg"} />
+                            <img className="seller-logo-image" alt={this.state.sellerName + " logo"} src={"/images/" + this.state.sellerName.replace(" ", "_") + "/logo.jpg"} />
                             <p className="seller-name"> {this.state.sellerName} </p> </div>
                         :
                         null

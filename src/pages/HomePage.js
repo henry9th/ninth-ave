@@ -1,6 +1,7 @@
 import React from 'react';
 import Item from '../components/Item';
 import { Carousel } from 'react-responsive-carousel';
+import "./homePage.css"
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -37,10 +38,27 @@ class HomePage extends React.Component {
         return (
             <div>
                 <div className="main-display">
-                    
+                    <Carousel
+                        showStatus={false}
+                        showThumbs={false}
+                        infiniteLoop={true}
+                        autoPlay={true}
+                    >
+                        <div>
+                            <img className="carouselImage" alt="" src="/images/web_images/background.jpg" />
+                        </div>
+                        <div>
+                        <img className="carouselImage" alt="" src="/images/web_images/background.jpg" />
+                        </div>
+                        <div>
+                        <img className="carouselImage" alt="" src="/images/web_images/background.jpg" />
+                        </div>
+                    </Carousel>
                 </div>
 
                 <div className="items-display">
+                    <h1 className="item-display-title">Featured Items</h1>
+
                     {this.state.items != null && this.state.items.length > 0 ?
                         this.state.items.map((item, index) =>
                             <Item key={index} item={item} onClick={this.handleClick} />

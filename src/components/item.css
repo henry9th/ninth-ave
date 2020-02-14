@@ -1,18 +1,28 @@
 .item-div {
+    margin-top: 3%;
+    margin-left: 3%;
     display: inline-block;
-    text-align: center;
     width: 15%;
+    text-align: center;
 }
 
 .mini-item-image {
-    width: 120px;
-    margin: 50px;
+    width: 75%;
+    margin-bottom: 3%;
 }
 
 .mini-item-name {
-    margin-bottom: 0px
+    font-size: 1em; 
+    white-space: nowrap; 
+    margin-bottom: 0px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .mini-item-sellerName { 
+    white-space: nowrap; 
+
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }

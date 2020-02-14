@@ -1,0 +1,138 @@
+#owner-portal {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+#welcome-message { 
+    font-size: 30px;
+
+}
+
+.page-component { 
+    margin: 5%;
+
+}
+
+.menu-button {
+    text-align: left;
+    font-size: 16px;
+    margin-right: 3%;
+    display: inline-block;
+    background: transparent;
+    border: none;
+    color: dimgray;
+}
+
+.menu-button:hover { 
+    background: transparent;
+    border: none;
+    color: lightgray;
+}
+
+.menu-button:focus,.menu-button:active:focus,.menu-button.active:focus,
+.menu-button.focus,.menu-button:active.focus,.menu-button.active.focus {
+    background-color: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.menu-button:global(.active), .menu-button:active, .menu-button.active { 
+    background-color: transparent !important; 
+    box-shadow: none;
+}
+
+
+
+#auth-main {
+    position: relative; 
+}
+
+#auth-form { 
+    display: inline-block;
+    width: 200px;
+    margin-left: 12%;
+    margin-top: 15%;
+}
+
+#auth-form input { 
+    width: 100%;
+}
+
+.main-button { 
+    border: solid 1px black;
+    margin: 4% 0 4% 0;
+    padding: 3% 20% 3% 20%;
+    background-color: transparent;
+}
+
+.main-button:hover { 
+    border: solid 1px gray;
+    color: white;
+    background-color: gray;
+}
+
+.main-button:focus { 
+    border: none;
+
+}
+
+.alt-button { 
+    border: none;
+    background-color: transparent;
+}
+
+.alt-button:hover { 
+    color: gray;
+}
+
+#background-image { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%; 
+    height: 100vh;
+    background-repeat: none;
+    background-size: 100%;
+    background-image: url("/images/web_images/vinyl.jpg");
+}
+
+.edit-bio { 
+    display: inline;
+
+
+}
+
+.bio-display { 
+    display: inline;
+
+}
+
+.edit-icon { 
+    margin-left: 10px;
+}
+
+.logo-display { 
+    display: inline;
+
+}
+
+.edit-logo { 
+    display: inline;
+
+}
+
+label { 
+    font-weight: bold;
+
+}
+
+.size-input { 
+    width: 40px;
+    margin-left: 10px;
+}
+
+ul { 
+    padding-left: 0;
+    font-family: monospace;
+}

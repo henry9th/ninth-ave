@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./itemPage.css";
 import { Dropdown, Button } from 'react-bootstrap';
+import { PayPalButton } from "react-paypal-button-v2";
 
 class ItemPage extends React.Component {
     constructor(props) {
@@ -55,7 +56,7 @@ class ItemPage extends React.Component {
 
                             {Object.keys(this.state.item.availability).map((key, index) => {
                                 if (this.state.item.availability[key] > 0) {
-                                    return <Dropdown.Item key={index} onClick={()=> this.setState({ selectedSize: key })}> {key} </Dropdown.Item>
+                                    return <Dropdown.Item key={index} onClick={()=> this.setState({ selectedSize: key })}> {key} </Dropdown.Item>   
                                 } else {
                                     return <Dropdown.Item key={index} disabled={true}> {key} </Dropdown.Item>
                                 }
@@ -63,8 +64,32 @@ class ItemPage extends React.Component {
                             }
                         </Dropdown.Menu>
                     </Dropdown>
+                    
+                    {/* <div className="paypal-container"> 
+                        <PayPalButton
+                            amount="0.01"
+                            // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                            // onSuccess={(details) => {
+                            //     alert("Transaction completed by " + details.payer.name.given_name);
 
-                    <Button className="buy-button"> Buy </Button> 
+                            //     // OPTIONAL: Call your server to save the transaction
+                            //     return fetch("/paypal-transaction-complete", {
+                            //         method: "post",
+                            //         body: JSON.stringify({
+                            //             orderID: data.orderID
+                            //         })
+                            //     });
+                            // }}
+                            style= {{
+                                layout:  'vertical',
+                                color:   'blue',
+                                shape:   'rect',
+                                label:   'paypal'
+                            }}
+                        />
+                    </div> */}
+
+                    <Button className="add-to-cart-button"> Add to cart </Button> 
                 </div>
             </div>
         );

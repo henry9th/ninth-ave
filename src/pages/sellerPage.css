@@ -1,4 +1,4 @@
-.seller-brand-image {
+.seller-logo-image {
     width: 8%;
     display: inline-block;
     margin: 2%;
@@ -11,7 +11,8 @@
 }
 
 .seller-bio {
-    display: inline-block;
+    margin-left: 10%;
+    display: block;
     font-size: 1vw;
 }
 
