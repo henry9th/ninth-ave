@@ -136,3 +136,9 @@ ul {
     padding-left: 0;
     font-family: monospace;
 }
+
+.error-message { 
+    margin-top: 20px;
+    color: red;
+
+}

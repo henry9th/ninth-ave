@@ -29,7 +29,7 @@ class HomePage extends React.Component {
 
     handleClick = (item) => { 
         this.props.history.push({
-            pathname: "/i/" + item.sellerName + "/" + item.name, 
+            pathname: "/i/" + item._id, 
             state: { item: item }
         });
     }

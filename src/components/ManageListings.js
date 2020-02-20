@@ -28,7 +28,7 @@ class ManageListings extends React.Component {
 
     handleClick = (item) => { 
         this.props.history.push({
-            pathname: "owners/i/" + item.id, 
+            pathname: "/o/i/" + item._id, 
             state: { item: item, sellerId: this.state.sellerId }
         });
     }

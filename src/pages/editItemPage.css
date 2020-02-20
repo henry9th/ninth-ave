@@ -1,0 +1,26 @@
+.item-information { 
+    margin-left: 3%;
+    float: left;
+}
+
+.item-name-input { 
+    font-weight: 200;
+    font-size: 30px;
+    width: 500px;
+}
+
+
+.item-description-input { 
+    width: 500px;
+    height: 250px;
+
+}
+
+.form-section { 
+    margin-top: 3%;
+}
+
+.item-image { 
+    width: 100px;
+    margin-right: 2%;
+}

@@ -48,8 +48,11 @@ class Header extends React.Component {
                                 
                         <Nav.Link href="/webmag"> Web Mag </Nav.Link>
                         <Nav.Link href="/owners"> Owners </Nav.Link>
-                        <Nav.Link href="/cart"> Cart </Nav.Link>
 
+                    </Nav>
+
+                    <Nav>
+                        <Nav.Link href="/cart"> Cart </Nav.Link>    
                     </Nav>
                     {/* <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />

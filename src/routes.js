@@ -11,11 +11,11 @@ const Routes = () => {
   return (
     <div>
       <Route exact path="/" component={HomePage} />
-      <Route path="/i/:seller/:itemName" exact component={ItemPage} />
+      <Route path="/i/:itemId" exact component={ItemPage} />
       <Route path="/s/:seller" exact component={SellerPage} />
       <Route path="/webmag" component={WebMagPage} /> 
       <Route path="/owners" component={OwnerPage} /> 
-      <Route path="/owners/i/:itemId" component={EditItemPage} /> 
+      <Route path="/o/i/:itemId" component={EditItemPage} /> 
 
     </div>
   )

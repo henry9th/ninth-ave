@@ -146,7 +146,7 @@ class SignInForm extends React.Component {
                     </form>
                 }
 
-                <p> { this.state.errorMessage } </p>
+                <p className="error-message"> { this.state.errorMessage } </p>
 
             </div>
 
