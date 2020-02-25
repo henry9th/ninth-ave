@@ -310,7 +310,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-
 router.post('/updateBrandImage', upload.single('file'), function(req, res) { 
   if (!req.file) {
     console.log("No file received");
@@ -326,5 +325,33 @@ router.post('/updateBrandImage', upload.single('file'), function(req, res) {
   }
 });
 
+router.post('/newItem', function(req, res) { 
+  
+  var name = req.name;
+  var description = req.description;
+  var availability = req.availability;
+  var sellerName = req.sellerName;
+  var sellerId = req.sellerId;
+  var postDate = req.postDate; 
+  var images = req.image; 
+  var price = req.price; 
+
+  var newItem = new Item({ name: name, description: description, availability: availability, sellerName: sellerName, sellerId: sellerId, postDate: postDate, images: images, price: price });
+  newItem.save(function (err) {
+    if (err) {
+      console.log(err);
+      return res.send({ 
+        success: false, 
+        message: err
+      });
+
+    } else { 
+      return res.send({
+        success: true,
+        message: "Successfully saved new item"
+      })
+    }
+  });
+});
 
 module.exports = router;

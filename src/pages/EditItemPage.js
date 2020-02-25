@@ -16,8 +16,19 @@ class EditItemPage extends React.Component {
             images: this.props.location.state.item.images,
             errorMessage: ""
         }
+
     }
 
+
+    removeImage = (imageIndex) => { 
+        if (this.state.images.length === 1) { 
+            this.setState({images: []});
+
+        } else { 
+            this.setState({images: this.state.images.splice(imageIndex, 1)});
+        }
+    }
+ 
     componentDidMount() {
         fetch('http://localhost:3001/item')
             .then(response => {
@@ -31,11 +42,6 @@ class EditItemPage extends React.Component {
                     console.log(JSON.stringify(itemResult));
                 }
             });
-    }
-
-    deleteImage = () => { 
-        
-
     }
 
 
@@ -67,10 +73,10 @@ class EditItemPage extends React.Component {
                 </div>
 
 
-                <div> 
+                <div className="item-images-section"> 
 
-                    {this.state.images.map(function (image, index) {
-                        return <img key={index} alt={image} src={"/images/" + image} className="item-image" />
+                    {this.state.images.map((image, index) => {
+                        return <img key={index} alt={image} onClick={()=>this.removeImage(index)} src={"/images/" + image} className="item-image" />
                     })}
 
                     <ImageUploader
@@ -86,7 +92,7 @@ class EditItemPage extends React.Component {
                 </div>
 
 
-                <input type="button" value="Save" className="main-button" onClick={this.submitSignin} /><br/>
+                <input type="button" value="Save" className="main-button"  /><br/>
             </div>
         );
     }

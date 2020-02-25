@@ -2,7 +2,7 @@
     margin-top: 3%;
     margin-left: 3%;
     display: inline-block;
-    width: 15%;
+    width: 150px;
     text-align: center;
 }
 
@@ -21,8 +21,14 @@
 
 .mini-item-sellerName { 
     white-space: nowrap; 
-
+    margin-bottom: 0px;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.mini-item-price { 
+    white-space: nowrap; 
     overflow: hidden;
     text-overflow: ellipsis; 
 }

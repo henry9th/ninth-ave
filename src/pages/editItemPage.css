@@ -1,6 +1,14 @@
 .item-information { 
     margin-left: 3%;
     float: left;
+    display: block;
+
+    width: 40%;
+}
+
+.item-images-section { 
+    width: 40%;
+    float: left;
 }
 
 .item-name-input { 
@@ -24,3 +32,4 @@
     width: 100px;
     margin-right: 2%;
 }
+
